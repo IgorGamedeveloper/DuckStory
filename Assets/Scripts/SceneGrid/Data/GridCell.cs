@@ -41,7 +41,9 @@ namespace IMG.Grid
 
         public bool IsObstacle { get; private set; }
 
-       
+        //  _________________________________________________________   ”«≈À œŒ»— ¿ œ”“» ﬂ◊≈… »
+
+        public PathNode CellPathNode { get; private set; }
 
 
 
@@ -90,7 +92,7 @@ namespace IMG.Grid
             }
 
             int randomIndex = Random.Range(0, _cellsModels.Length);
-            
+
             _meshFilter.mesh = _cellsModels[randomIndex].GetComponent<MeshFilter>().sharedMesh;
             _meshRenderer.sharedMaterials = _cellsModels[randomIndex].GetComponent<MeshRenderer>().sharedMaterials;
 
@@ -116,7 +118,7 @@ namespace IMG.Grid
             }
 
             int randomIndex = Random.Range(0, _obstaclesModels.Length);
-            
+
             _meshFilter.mesh = _obstaclesModels[randomIndex].GetComponent<MeshFilter>().sharedMesh;
             _meshRenderer.sharedMaterials = _obstaclesModels[randomIndex].GetComponent<MeshRenderer>().sharedMaterials;
 
@@ -150,6 +152,13 @@ namespace IMG.Grid
                 _boxCollider.center = _cellColliderCenter;
                 _boxCollider.size = _cellColliderSize;
             }
+        }
+
+        //  _________________________________________________________   Õ¿—“–Œ… ¿ ”«À¿ œŒ»— ¿ œ”“»:
+
+        public void SetPathNode(PathNode pathNode)
+        {
+            CellPathNode = pathNode;
         }
     }
 
