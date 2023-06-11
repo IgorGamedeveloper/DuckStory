@@ -7,6 +7,8 @@ namespace IMG.Grid
     {
         //  ________________________________________________________    ПАРАМЕТРЫ СЕТКИ:
         
+        public static SceneGrid Instance { get; private set; }
+
         [Header("Теги и слои:")]
         [Tooltip("Тег сетки и ячеек.")]
         [SerializeField] private string _gridTag = "Tag_Grid";
@@ -60,6 +62,15 @@ namespace IMG.Grid
 
         private void Awake()
         {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else if (Instance != this)
+            {
+                Destroy(gameObject);
+            }
+
             InitializeCellsComponent();
         }
 
