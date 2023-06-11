@@ -39,7 +39,8 @@ namespace IMG.Grid
 
         //  _________________________________________________________   опнундхлнярэ ъвеийх:
 
-        public bool IsObstacle { get; private set; }
+        [SerializeField] [HideInInspector] private bool _isObstacle;
+        public bool IsObstacle { get { return _isObstacle; } }
 
         //  _________________________________________________________   сгек онхяйю осрх ъвеийх
 
@@ -129,7 +130,7 @@ namespace IMG.Grid
 
         public void SetObstacle(bool isObstacle)
         {
-            IsObstacle = isObstacle;
+            _isObstacle = isObstacle;
             ChangeBoxCollider(isObstacle);
         }
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace IMG.Character
 {
-    [RequireComponent(typeof(PlayerInputSystem))]
+    [RequireComponent(typeof(PlayerInputSystem), typeof(PlayerCollisionDetector))]
     public class PlayerMovement : CharacterMovement
     {
         private PlayerInputSystem _inputSystem;

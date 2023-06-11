@@ -64,7 +64,8 @@ namespace IMG.Character
             _collider = GetComponent<CapsuleCollider>();
             _collider.center = _colliderCenter;
             _collider.radius = _colliderRadius;
-            _collider.height = _colliderHeight; 
+            _collider.height = _colliderHeight;
+            _collider.isTrigger = true;
 
             _parameters = GetComponent<CharacterParameters>();
         }
