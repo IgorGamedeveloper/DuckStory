@@ -84,7 +84,7 @@ namespace IMG.Grid
             {
                 for (int j = 0; j < CellsComponent.GetLength(1); j++)
                 {
-                    if (Data[i, j].TryGetComponent(out GridCell component) == true)
+                    if (Data[i, j] != null && Data[i, j].TryGetComponent(out GridCell component) == true)
                     {
                         CellsComponent[i, j] = component;
                     }

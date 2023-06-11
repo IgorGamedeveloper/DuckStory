@@ -21,6 +21,9 @@ namespace IMG.Character
 
 
 
+        //  _________________________________________________________________   хмхжхюкхгюжхъ х нопедекемхе бпелемх ондохяйх мю янашрхъ х нрохяйх нр янашрхи:
+
+        #region хмхжхюкхгюжхъ, ондохяйю, нрохяйю
 
         private void OnEnable()
         {
@@ -67,9 +70,15 @@ namespace IMG.Character
             yield break;
         }
 
-       
+        #endregion
 
-        protected override void SelectDirection()
+        //  _________________________________________________________________   мюунфдемхе осрх, бшанп деиярбхъ бпюыемхъ хкх дбхфемхъ:
+
+        #region бшанп мюопюбкемхъ, дбхфемхе х бпюыемхе
+
+        //  _________________________________________________________________   мюунфдемхе осрх дн жекх х бшанп якедсчыецн деиярбхъ:
+
+        protected override void SelectDirection() 
         {
             _pathToTarget = _pathfinding.FindPath(transform.position, _player.transform.position);
 
@@ -117,6 +126,8 @@ namespace IMG.Character
             _inMove = false;
         }
 
+        //  _________________________________________________________________   дбхфемхе:
+
         protected override IEnumerator Movement(Vector3 direction)
         {
             UpdateMovementData();
@@ -141,6 +152,8 @@ namespace IMG.Character
 
             FastEndMove();
         }
+
+        //  _________________________________________________________________   бпюыемхе:
 
         protected override IEnumerator Rotation(bool isRight)
         {
@@ -168,7 +181,9 @@ namespace IMG.Character
             }
         }
 
+        #endregion
 
+        //  _________________________________________________________________   нркюдйю:
 
         private void OnDrawGizmosSelected()
         {

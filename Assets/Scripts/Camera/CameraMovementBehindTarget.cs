@@ -3,16 +3,33 @@ using IMG.Character;
 
 public class CameraMovementBehindTarget : MonoBehaviour
 {
+    //  _________________________________________________________________   КОМПОНЕНТЫ КАМЕРЫ:
     private InputSystem _inputSystem;
     private Transform _currentTarget;
 
+
+    //  _________________________________________________________________   ПАРАМЕТРЫ КАМЕРЫ:
+
+    [Header("Параметры камеры:")]
+    
+    [Space(15f)]
+    [Header("Скорость вращения камеры:")]
     [SerializeField] private float _rotationSpeed = 8f;
+    
+    [Space(10f)]
+    [Header("Угол наклона камеры.")]
     [SerializeField] private float _upperAngle = 40f;
+    
+    [Space(10f)]
+    [Header("Растояние от камеры до цели.")]
     [SerializeField] private float _distance = 25f;
 
     private float _horizontalRotation;
 
 
+
+
+    //  ###################################################################   ИНИЦИАЛИЗАЦИЯ:
 
     private void Awake()
     {
@@ -23,6 +40,8 @@ public class CameraMovementBehindTarget : MonoBehaviour
     {
         _inputSystem = FindObjectOfType<PlayerInputSystem>().TargetInputSystem;
     }
+
+    //  _________________________________________________________________   ПЕРЕМЕЩЕНИЕ КАМЕРЫ:
 
     void LateUpdate()
     {
